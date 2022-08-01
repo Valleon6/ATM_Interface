@@ -50,13 +50,17 @@ public class Transaction {
         return this.amount;
     }
 
+    /**
+     * Get a String summarizing the transaction
+     * @return this.amount
+     */
     public String getSummaryLine(){
         if(this.amount >= 0 ){
-            return String.format("%s : $%0.2f : %s", this.timeStamp.toString(),
+            return String.format("%s : $%.02f : %s", this.timeStamp.toString(),
             this.amount, this.memo);
         }else {
-            return String.format("%s : $(0.2f) : %s",
-                    this.timeStamp.toString(), this.amount, this.memo);
+            return String.format("%s : $(%.02f) : %s",
+                    this.timeStamp.toString(), -this.amount, this.memo);
         }
     }
 }
