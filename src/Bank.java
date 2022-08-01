@@ -7,6 +7,16 @@ public class Bank {
     private ArrayList<Account> accounts;
 
     /**
+     * Create a new Banl object with empty list of users and accounts
+     * @param name the name of the bank
+     */
+    public Bank(String name){
+        this.name = name;
+        this.users = new ArrayList<User>();
+        this.accounts = new ArrayList<Account>();
+    }
+
+    /**
      * Generate a new universally unique id for a user
      *
      * @return the uuid
@@ -110,4 +120,7 @@ public User userLogin(String userID, String pin){
     return null;
 }
 
+    public String getName() {
+        return this.name;
+    }
 }
